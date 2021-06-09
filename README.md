@@ -1,6 +1,6 @@
 # Bookstore
 
-> ...........
+> Front-end app to manage bookstore dynamically using react and redux.
 
 
 
@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo]()
+[Live Demo](https://bookstore-31.herokuapp.com/)
 
 
 ## Getting Started
