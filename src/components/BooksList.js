@@ -9,7 +9,7 @@ const BooksList = () => {
   const list = useSelector((state) => state.books.list);
 
   const row = list.map((book) => (
-    <Book key={book.bookID} book={book} />
+    <Book key={book.id} book={book} />
   ));
 
   return (
