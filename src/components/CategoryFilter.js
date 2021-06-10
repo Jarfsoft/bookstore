@@ -1,15 +1,18 @@
-import { React, useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import actions from '../actions/index';
 
 const CategoryFilter = () => {
-  const [filter, setFilter] = useState('');
+  const dispatch = useDispatch();
 
   const handleFilterChange = (value) => {
-    setFilter(value);
+    dispatch(actions.filter(value));
   };
 
   return (
     <select name="categoryFilter" required id="categoryFilter" onChange={(e) => handleFilterChange(e.target.value)}>
-      <option value="">Select Category</option>
+      <option value="ALL">Select Category</option>
       <option value="action">Action</option>
       <option value="biography">Biography</option>
       <option value="history">History</option>
