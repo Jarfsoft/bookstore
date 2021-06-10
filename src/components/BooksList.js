@@ -2,16 +2,18 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import Book from './Book';
+import CategoryFilter from './CategoryFilter';
 
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
 
-  const row = list.map((book) => (
+  const row = list.filter((book) => book.category === "filterstate").map((book) => (
     <Book key={book.id} book={book} />
   ));
 
   return (
-    <div>
+    <>
+      <CategoryFilter />
       <table>
         <thead>
           <tr>
@@ -24,7 +26,7 @@ const BooksList = () => {
           {row}
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 
