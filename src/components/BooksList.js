@@ -3,8 +3,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Book from './Book';
 
-// import PropTypes from 'prop-types';
-
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
 
@@ -29,9 +27,5 @@ const BooksList = () => {
     </div>
   );
 };
-
-// BooksList.propTypes = {
-
-// };
 
 export default BooksList;

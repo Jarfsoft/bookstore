@@ -1,10 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
 import { useDispatch } from 'react-redux';
 import { React, useState } from 'react';
 import actions from '../actions/index';
-
-// import PropTypes from 'prop-types';
 
 const BooksForm = () => {
   const dispatch = useDispatch();
@@ -41,5 +37,3 @@ const BooksForm = () => {
 };
 
 export default BooksForm;
-
-/* eslint-enable jsx-a11y/label-has-associated-control */

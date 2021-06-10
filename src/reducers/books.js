@@ -5,15 +5,16 @@ const stateDefault = {
     { id: Math.floor(Math.random() * 100), title: 'Book3', category: 'Fiction' },
   ],
 };
-/* eslint-disable no-case-declarations */
+
 const books = (state = stateDefault, action) => {
   let newState;
+  let newList;
   switch (action.type) {
     case 'CREATE_BOOK':
       newState = { ...state, list: [...state.list, action.payload] };
       return newState;
     case 'REMOVE_BOOK':
-      const newList = state.list.filter((item) => item.id !== action.payload.id);
+      newList = state.list.filter((item) => item.id !== action.payload.id);
       newState = { ...state, list: newList };
       return newState;
     default:
@@ -22,4 +23,3 @@ const books = (state = stateDefault, action) => {
 };
 
 export default books;
-/* eslint-enable no-case-declarations */
