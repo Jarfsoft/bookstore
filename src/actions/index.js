@@ -1,10 +1,6 @@
-const addBook = (title1) => ({
+const addBook = (newBook) => ({
   type: 'ADD',
-  payload: {
-    id: 45,
-    title: title1,
-    category: 'category',
-  },
+  payload: newBook,
 });
 
 export default addBook;

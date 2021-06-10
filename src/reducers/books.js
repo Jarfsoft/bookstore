@@ -7,11 +7,9 @@ const stateDefault = {
 };
 /* eslint-disable no-case-declarations */
 const books = (state = stateDefault, action) => {
-  const newState = { ...state };
-
   switch (action.type) {
     case 'ADD':
-      newState.list.push(action.payload);
+      const newState = { ...state, list: [...state.list, action.payload] };
       return newState;
     default:
       return state;

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import React from 'react';
 import { useDispatch } from 'react-redux';
+import { React, useState } from 'react';
 import addBook from '../actions/index';
 
 // import PropTypes from 'prop-types';
@@ -9,21 +9,21 @@ import addBook from '../actions/index';
 const BooksForm = () => {
   const dispatch = useDispatch();
 
-  let title = '';
-
-  const handleChange = (e) => {
-    title = e.target.value;
-  };
+  const [newBook, setNewBook] = useState({
+    id: 59,
+    title: '',
+    category: 'SyFy',
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook(title));
+    dispatch(addBook(newBook));
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
-      <input type="text" id="name" onChange={handleChange} />
+      <input type="text" id="name" onChange={(e) => setNewBook({ ...newBook, title: e.target.value })} />
       <input type="submit" value="Submit" />
     </form>
   );
