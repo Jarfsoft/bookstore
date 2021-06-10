@@ -7,9 +7,14 @@ const stateDefault = {
 };
 /* eslint-disable no-case-declarations */
 const books = (state = stateDefault, action) => {
+  let newState;
   switch (action.type) {
-    case 'ADD':
-      const newState = { ...state, list: [...state.list, action.payload] };
+    case 'CREATE_BOOK':
+      newState = { ...state, list: [...state.list, action.payload] };
+      return newState;
+    case 'REMOVE_BOOK':
+      const newList = state.list.filter((item) => item.id !== action.payload.id);
+      newState = { ...state, list: newList };
       return newState;
     default:
       return state;

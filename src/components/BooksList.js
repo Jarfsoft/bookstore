@@ -15,12 +15,16 @@ const BooksList = () => {
   return (
     <div>
       <table>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-        {row}
+        <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {row}
+        </tbody>
       </table>
     </div>
   );

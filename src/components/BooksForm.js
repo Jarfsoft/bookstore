@@ -2,7 +2,7 @@
 
 import { useDispatch } from 'react-redux';
 import { React, useState } from 'react';
-import addBook from '../actions/index';
+import actions from '../actions/index';
 
 // import PropTypes from 'prop-types';
 
@@ -18,7 +18,7 @@ const BooksForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setNewBook({ ...newBook, id: Math.floor(Math.random() * 100) });
-    dispatch(addBook(newBook));
+    dispatch(actions.addBook(newBook));
     setNewBook({ ...newBook, title: '' });
   };
 
