@@ -1,13 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import actions from '../actions/index';
-
-const CategoryFilter = () => {
-  const dispatch = useDispatch();
-
+const CategoryFilter = ({ onFilterChange }) => {
   const handleFilterChange = (value) => {
-    dispatch(actions.filter(value));
+    onFilterChange(value);
   };
 
   return (
@@ -22,6 +18,10 @@ const CategoryFilter = () => {
       <option value="sci-fi">Sci-Fi</option>
     </select>
   );
+};
+
+CategoryFilter.propTypes = {
+  onFilterChange: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;

@@ -1,13 +1,19 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import CategoryFilter from './CategoryFilter';
+import actions from '../actions/index';
 
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
+  const dispatch = useDispatch();
 
   const category = useSelector((state) => state.filter);
+
+  const handleFilterChange = (value) => {
+    dispatch(actions.filter(value));
+  };
 
   const row = list.filter((book) => book.category === category || category === 'ALL').map((book) => (
     <Book key={book.id} book={book} />
@@ -15,7 +21,7 @@ const BooksList = () => {
 
   return (
     <>
-      <CategoryFilter />
+      <CategoryFilter onFilterChange={handleFilterChange} />
       <table>
         <thead>
           <tr>
