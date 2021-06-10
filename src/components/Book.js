@@ -1,5 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
-
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -23,9 +21,7 @@ const Book = ({ book }) => {
 };
 
 Book.propTypes = {
-  book: PropTypes.object.isRequired,
+  book: PropTypes.objectOf.isRequired,
 };
 
 export default Book;
-
-/* eslint-enable react/forbid-prop-types */
