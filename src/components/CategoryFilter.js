@@ -12,7 +12,7 @@ const CategoryFilter = () => {
 
   return (
     <select name="categoryFilter" required id="categoryFilter" onChange={(e) => handleFilterChange(e.target.value)}>
-      <option value="ALL">Select Category</option>
+      <option value="ALL">All</option>
       <option value="action">Action</option>
       <option value="biography">Biography</option>
       <option value="history">History</option>

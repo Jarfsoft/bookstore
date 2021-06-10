@@ -7,8 +7,7 @@ import CategoryFilter from './CategoryFilter';
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
 
-  const category = useSelector((state) => state.filter.filter);
-  console.log(category);
+  const category = useSelector((state) => state.filter);
 
   const row = list.filter((book) => book.category === category || category === 'ALL').map((book) => (
     <Book key={book.id} book={book} />
