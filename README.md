@@ -1,8 +1,6 @@
 # Bookstore
 
-> Front-end app to manage bookstore dynamically using react and redux.
-
-
+> Front-end app to manage bookstore dynamically, applying to react and redux basic configuration as components, props, hooks, actions, and reducers. Store books temporarily by name and category, go through the search menu filtering books by category.
 
 
 ## Built
@@ -14,7 +12,7 @@
 
 ## Live Demo
 
-[Live Demo](https://bookstore-31.herokuapp.com/)
+[Live Demo](https://bookstore-cms-1.herokuapp.com/)
 
 
 ## Getting Started
