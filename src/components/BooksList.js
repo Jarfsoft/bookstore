@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import Book from './Book';
+import './BookList.css';
 
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
@@ -11,7 +12,7 @@ const BooksList = () => {
   ));
 
   return (
-    <div>
+    <>
       <table>
         <thead>
           <tr>
@@ -24,7 +25,7 @@ const BooksList = () => {
           {row}
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 
