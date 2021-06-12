@@ -1,3 +1,15 @@
 body {
   background-color: bisque;
 }
+
+.main-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  background: chartreuse;
+}
+
+.main-components {
+  margin: 2rem;
+}

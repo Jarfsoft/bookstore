@@ -4,9 +4,9 @@ import BooksList from './BooksList';
 import BooksForm from './BooksForm';
 
 const App = () => (
-  <div>
-    <BooksForm />
-    <BooksList />
+  <div className="main-cont">
+    <div className="main-components"><BooksForm /></div>
+    <div className="main-components"><BooksList /></div>
   </div>
 );
 
