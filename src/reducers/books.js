@@ -1,8 +1,8 @@
 const stateDefault = {
   list: [
-    { id: Math.floor(Math.random() * 100), title: 'Book1', category: 'Fiction' },
-    { id: Math.floor(Math.random() * 100), title: 'Book2', category: 'Fiction' },
-    { id: Math.floor(Math.random() * 100), title: 'Book3', category: 'Fiction' },
+    { id: Math.floor(Math.random() * 100), title: 'Book1', category: 'action' },
+    { id: Math.floor(Math.random() * 100), title: 'Book2', category: 'action' },
+    { id: Math.floor(Math.random() * 100), title: 'Book3', category: 'action' },
   ],
 };
 

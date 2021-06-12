@@ -13,15 +13,15 @@ const BooksForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNewBook({ ...newBook, id: Math.floor(Math.random() * 100) });
+    setNewBook({ ...newBook });
     dispatch(actions.addBook(newBook));
-    setNewBook({ ...newBook, title: '' });
+    setNewBook({ ...newBook, title: '', category: '' });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" required id="name" placeholder="Name" value={newBook.title} onChange={(e) => setNewBook({ ...newBook, title: e.target.value })} />
-      <select name="category" required id="category" onChange={(e) => setNewBook({ ...newBook, category: e.target.value })}>
+      <input type="text" required id="name" placeholder="Name" value={newBook.title} onChange={(e) => setNewBook({ ...newBook, title: e.target.value, id: Math.floor(Math.random() * 100) })} />
+      <select name="category" required id="category" value={newBook.category} onChange={(e) => setNewBook({ ...newBook, category: e.target.value })}>
         <option value="">Select Category</option>
         <option value="action">Action</option>
         <option value="biography">Biography</option>

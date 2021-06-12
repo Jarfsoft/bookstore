@@ -1,5 +1,6 @@
 body {
   background-color: bisque;
+  margin-top: 7rem;
 }
 
 .main-cont {
@@ -7,7 +8,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; 
-  background: chartreuse;
 }
 
 .main-components {
