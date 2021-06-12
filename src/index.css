@@ -13,3 +13,9 @@ body {
 .main-components {
   margin: 2rem;
 }
+
+th,
+td {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
