@@ -11,6 +11,10 @@ const actions = {
     type: 'CHANGE_FILTER',
     payload: category,
   }),
+  show: (books) => ({
+    type: 'SHOW_BOOKS',
+    payload: books,
+  }),
 };
 
 export default actions;

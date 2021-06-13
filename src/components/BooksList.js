@@ -1,9 +1,9 @@
 import React from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import CategoryFilter from './CategoryFilter';
 import actions from '../actions/index';
+import { fetchApi } from '../reducers/books';
 
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
@@ -19,8 +19,13 @@ const BooksList = () => {
     <Book key={book.id} book={book} />
   ));
 
+  const clickHandler = () => {
+    dispatch(fetchApi());
+  };
+
   return (
     <>
+      <button type="button" onClick={clickHandler}>Load Books</button>
       <CategoryFilter onFilterChange={handleFilterChange} />
       <table>
         <thead>
