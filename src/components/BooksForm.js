@@ -18,10 +18,25 @@ const BooksForm = () => {
     setNewBook({ ...newBook, title: '', category: '' });
   };
 
+  const handleChange = (e) => {
+    if (e.target.id === 'name') {
+      setNewBook({
+        ...newBook,
+        title: e.target.value,
+        id: Math.floor(Math.random() * 100),
+      });
+    } else {
+      setNewBook({
+        ...newBook,
+        category: e.target.value,
+      });
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" required id="name" placeholder="Name" value={newBook.title} onChange={(e) => setNewBook({ ...newBook, title: e.target.value, id: Math.floor(Math.random() * 100) })} />
-      <select name="category" required id="category" value={newBook.category} onChange={(e) => setNewBook({ ...newBook, category: e.target.value })}>
+      <input type="text" required id="name" placeholder="Name" value={newBook.title} onChange={handleChange} />
+      <select name="category" required id="category" value={newBook.category} onChange={handleChange}>
         <option value="">Select Category</option>
         <option value="action">Action</option>
         <option value="biography">Biography</option>
