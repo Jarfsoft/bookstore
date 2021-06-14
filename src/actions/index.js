@@ -7,6 +7,10 @@ const actions = {
     type: 'REMOVE_BOOK',
     payload: newBook,
   }),
+  filter: (category) => ({
+    type: 'CHANGE_FILTER',
+    payload: category,
+  }),
 };
 
 export default actions;

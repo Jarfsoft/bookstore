@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Book';
 import actions from '../actions/index';
+import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
@@ -11,6 +12,8 @@ const BooksList = () => {
   const handleRemoveBook = (book) => {
     dispatch(actions.removeBook(book));
   };
+
+  const category = useSelector((state) => state.filter);
 
   const handleFilterChange = (value) => {
     dispatch(actions.filter(value));
