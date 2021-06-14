@@ -1,12 +1,14 @@
-import actions from '../actions/index';
 // import { useDispatch } from 'react-redux';
+import actions from '../actions/index';
 
 const stateDefault = {
-  list: [
-    { id: Math.floor(Math.random() * 100), title: 'Book1', category: 'action' },
-    { id: Math.floor(Math.random() * 100), title: 'Book2', category: 'action' },
-    { id: Math.floor(Math.random() * 100), title: 'Book3', category: 'action' },
-  ],
+  list: [],
+};
+
+export const fetchApi = () => async (dispatch) => {
+  const books = await fetch('https://bookstore-api31.herokuapp.com/books').then((res) => res.json());
+  dispatch(actions.show(books.data));
+  // console.log(books);
 };
 
 export const books = (state = stateDefault, action) => {
@@ -26,12 +28,6 @@ export const books = (state = stateDefault, action) => {
     default:
       return state;
   }
-};
-
-export const fetchApi = () => async (dispatch) => {
-  const books = await fetch('https://bookstore-api31.herokuapp.com/books').then((res) => res.json());
-  dispatch(actions.show(books.data));
-  // console.log(books);
 };
 
 // const dispatch = useDispatch();

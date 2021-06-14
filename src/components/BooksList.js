@@ -8,6 +8,7 @@ import { fetchApi } from '../reducers/books';
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
   const dispatch = useDispatch();
+  dispatch(fetchApi());
 
   const category = useSelector((state) => state.filter);
 
@@ -25,7 +26,7 @@ const BooksList = () => {
 
   return (
     <>
-      <button type="button" onClick={clickHandler}>Load Books</button>
+      <button type="button" onClick={clickHandler}>Refresh</button>
       <CategoryFilter onFilterChange={handleFilterChange} />
       <table>
         <thead>
