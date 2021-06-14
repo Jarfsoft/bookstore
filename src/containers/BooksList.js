@@ -12,12 +12,17 @@ const BooksList = () => {
     dispatch(actions.removeBook(book));
   };
 
-  const row = list.map((book) => (
+  const handleFilterChange = (value) => {
+    dispatch(actions.filter(value));
+  };
+
+  const row = list.filter((book) => book.category === category || category === 'ALL').map((book) => (
     <Book key={book.id} book={book} handleClick={handleRemoveBook} />
   ));
 
   return (
     <>
+      <CategoryFilter onFilterChange={handleFilterChange} />
       <table>
         <thead>
           <tr>
