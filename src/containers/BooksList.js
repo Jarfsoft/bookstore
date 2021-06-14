@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Book';
 import actions from '../actions/index';
+import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
@@ -12,12 +13,19 @@ const BooksList = () => {
     dispatch(actions.removeBook(book));
   };
 
-  const row = list.map((book) => (
+  const category = useSelector((state) => state.filter);
+
+  const handleFilterChange = (value) => {
+    dispatch(actions.filter(value));
+  };
+
+  const row = list.filter((book) => book.category === category || category === 'ALL').map((book) => (
     <Book key={book.id} book={book} handleClick={handleRemoveBook} />
   ));
 
   return (
     <>
+      <CategoryFilter onFilterChange={handleFilterChange} />
       <table>
         <thead>
           <tr>
