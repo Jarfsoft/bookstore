@@ -25,7 +25,14 @@ const BooksList = () => {
 
   return (
     <>
-      <CategoryFilter onFilterChange={handleFilterChange} />
+      <nav className="navbar components-bg">
+        <h1>Bookstore CMS</h1>
+        <p>BOOKS</p>
+        <div>
+          <p>CATEGORY:</p>
+          <CategoryFilter onFilterChange={handleFilterChange} />
+        </div>
+      </nav>
       <table>
         <thead>
           <tr>
