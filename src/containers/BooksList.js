@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import Book from './Book';
+import Book from '../components/Book';
 import actions from '../actions/index';
 
 const BooksList = () => {
