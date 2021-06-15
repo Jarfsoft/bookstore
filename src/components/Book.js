@@ -15,7 +15,7 @@ const Book = ({ book, handleClick }) => {
         <p>Author</p>
         <div className="components-links">
           <a href="nav">Comment</a>
-          <a id="edit" href="nav">Edit</a>
+          <a className="edit" href="nav">Edit</a>
           <button type="button" onClick={handleClickEvent}>Remove</button>
         </div>
       </div>

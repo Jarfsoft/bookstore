@@ -142,7 +142,7 @@ td {
   margin: 1rem 0;
 }
 
-#edit {
+.edit {
   padding-left: 15px;
 }
 
@@ -264,20 +264,20 @@ td {
   font-size: 2em;
 }
 
-#book-form {
+.book-form {
   background-color: #fafafa;
   margin: 0 6rem;
   margin-bottom: 5rem;
   padding-bottom: 10rem;
 }
 
-#book-form form {
+.book-form form {
   margin: 0 8rem;
   padding: 2rem 0;
   border-top: 2px solid #e8e8e8;
 }
 
-#book-form h1 {
+.book-form h1 {
   width: 174px;
   height: 24px;
   margin: 29px 524px 19px 0;
@@ -291,8 +291,8 @@ td {
   color: #888;
 }
 
-#name {
-  width: 43%;
+.book-input-form {
+  width: 40%;
   height: 20px;
   padding: 10px;
   border-radius: 4px;
@@ -307,7 +307,7 @@ td {
   letter-spacing: -0.15px;
 }
 
-#book-form select {
+.book-form select {
   width: 25%;
   height: 40px;
   margin: 19px 34px 0;
@@ -316,7 +316,7 @@ td {
   background-color: white;
 }
 
-#book-submit {
+.book-submit {
   width: 20%;
   height: 40px;
   padding: 10px;
