@@ -70,7 +70,6 @@ td {
   width: 49px;
   height: 18px;
   opacity: 0.5;
-  margin: 0 0 !important;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -84,7 +83,6 @@ td {
 .book h2 {
   width: 197px;
   height: 29px;
-  margin: 0 0 !important;
   font-family: RobotoSlab, sans-serif;
   font-size: 22px;
   font-weight: bold;
