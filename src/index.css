@@ -269,11 +269,13 @@ td {
 #book-form {
   background-color: #fafafa;
   margin: 0 6rem;
+  margin-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 
 #book-form form {
   margin: 0 8rem;
-  padding: 3rem 0;
+  padding: 2rem 0;
   border-top: 2px solid #e8e8e8;
 }
 
@@ -292,7 +294,7 @@ td {
 }
 
 #name {
-  width: 40%;
+  width: 43%;
   height: 20px;
   padding: 10px;
   border-radius: 4px;
