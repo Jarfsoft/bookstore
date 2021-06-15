@@ -19,6 +19,10 @@ export const postApi = (newBook) => async () => {
   });
 };
 
+export const deleteApi = (id) => async () => {
+  await fetch(`https://bookstore-api31.herokuapp.com/books/${id}`, { method: 'DELETE' });
+};
+
 export const books = (state = stateDefault, action) => {
   let newState;
   let newList;
