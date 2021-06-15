@@ -8,12 +8,38 @@ const Book = ({ book, handleClick }) => {
   };
 
   return (
-    <tr>
-      <td>{book.id}</td>
-      <td>{book.title}</td>
-      <td>{book.category}</td>
-      <td><button type="button" onClick={handleClickEvent}>X</button></td>
-    </tr>
+    <div className="book components-bg ">
+      <div className="book-info">
+        <h4>{book.category}</h4>
+        <h2>{book.title}</h2>
+        <p>Author</p>
+        <div className="components-links">
+          <a href="nav">Comment</a>
+          <a id="edit" href="nav">Edit</a>
+          <button type="button" onClick={handleClickEvent}>Remove</button>
+        </div>
+      </div>
+      <div className="graph">
+        <div className="circle-wrap">
+          <div className="circle">
+            <div className="mask full"><p> </p></div>
+            <div className="mask half"><p> </p></div>
+            <div className="inside-circle">
+              <p> </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>0%</p>
+          <span>Completed</span>
+        </div>
+      </div>
+      <div className="chapter-manage">
+        <span>CURRENT CHAPTER</span>
+        <p>Chapter 12</p>
+        <button type="button">UPDATE PROGRESS</button>
+      </div>
+    </div>
   );
 };
 

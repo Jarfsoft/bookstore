@@ -33,18 +33,7 @@ const BooksList = () => {
           <CategoryFilter onFilterChange={handleFilterChange} />
         </div>
       </nav>
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          {row}
-        </tbody>
-      </table>
+      <div className="table">{row}</div>
     </>
   );
 };
