@@ -7,9 +7,10 @@ body {
 }
 
 .table {
-  border: 2px solid #e8e8e8; 
+  border-top: 2px solid #e8e8e8; 
   background-color: #fafafa;
   margin: 0 6rem;
+  padding-bottom: 2rem;
 }
 
 .book {
@@ -64,12 +65,6 @@ td {
 
 .navbar div {
   display: flex;
-}
-
-.book-info,
-.chapter-manage {
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .book h4 {
@@ -194,7 +189,6 @@ td {
 
 .graph {
   display: flex;
-  margin: 3rem 0;
   padding: 1rem 4rem;
   border-right: 2px solid #e8e8e8;
 }
@@ -270,4 +264,72 @@ td {
   z-index: 100;
   font-weight: 700;
   font-size: 2em;
+}
+
+#book-form {
+  background-color: #fafafa;
+  margin: 0 6rem;
+}
+
+#book-form form {
+  margin: 0 8rem;
+  padding: 3rem 0;
+  border-top: 2px solid #e8e8e8;
+}
+
+#book-form h1 {
+  width: 174px;
+  height: 24px;
+  margin: 29px 524px 19px 0;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888888;
+}
+
+#name {
+  width: 40%;
+  height: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: white;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+}
+
+#book-form select {
+  width: 25%;
+  height: 40px;
+  margin: 19px 34px 0;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: white;
+}
+
+#book-submit {
+  width: 20%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: #0290ff;
+  font-family: RobotoSlab;
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: white;
 }
