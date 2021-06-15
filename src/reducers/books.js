@@ -1,4 +1,3 @@
-// import { useDispatch } from 'react-redux';
 import actions from '../actions/index';
 
 const stateDefault = {
@@ -8,7 +7,16 @@ const stateDefault = {
 export const fetchApi = () => async (dispatch) => {
   const books = await fetch('https://bookstore-api31.herokuapp.com/books').then((res) => res.json());
   dispatch(actions.show(books.data));
-  // console.log(books);
+};
+
+export const postApi = (newBook) => async () => {
+  await fetch('https://bookstore-api31.herokuapp.com/books', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(newBook),
+  });
 };
 
 export const books = (state = stateDefault, action) => {
@@ -29,11 +37,3 @@ export const books = (state = stateDefault, action) => {
       return state;
   }
 };
-
-// const dispatch = useDispatch();
-
-// <button type="button" onClick={dispatch(fetchApi())}>Load Books</button>
-
-// export default { books, fetchApi };
-
-// export default books;

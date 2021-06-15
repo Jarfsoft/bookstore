@@ -20,13 +20,8 @@ const BooksList = () => {
     <Book key={book.id} book={book} />
   ));
 
-  const clickHandler = () => {
-    dispatch(fetchApi());
-  };
-
   return (
     <>
-      <button type="button" onClick={clickHandler}>Refresh</button>
       <CategoryFilter onFilterChange={handleFilterChange} />
       <table>
         <thead>

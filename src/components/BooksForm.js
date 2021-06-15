@@ -1,20 +1,22 @@
 import { useDispatch } from 'react-redux';
 import { React, useState } from 'react';
-import actions from '../actions/index';
+// import actions from '../actions/index';
+import { postApi } from '../reducers/books';
 
 const BooksForm = () => {
   const dispatch = useDispatch();
 
   const [newBook, setNewBook] = useState({
-    id: Math.floor(Math.random() * 100),
+    // id: Math.floor(Math.random() * 100),
     title: '',
     category: '',
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNewBook({ ...newBook, id: Math.floor(Math.random() * 100) });
-    dispatch(actions.addBook(newBook));
+    // setNewBook({ ...newBook, id: Math.floor(Math.random() * 100) });
+    // dispatch(actions.addBook(newBook));
+    dispatch(postApi(newBook));
     setNewBook({ ...newBook, title: '' });
   };
 
