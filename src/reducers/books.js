@@ -9,7 +9,7 @@ export const fetchApi = () => async (dispatch) => {
   dispatch(actions.show(books.data));
 };
 
-export const postApi = (newBook) => async () => {
+export const postApi = (newBook) => async (dispatch) => {
   await fetch('https://bookstore-api31.herokuapp.com/books', {
     method: 'POST',
     headers: {
@@ -17,24 +17,26 @@ export const postApi = (newBook) => async () => {
     },
     body: JSON.stringify(newBook),
   });
+  dispatch(actions.addBook(newBook));
 };
 
-export const deleteApi = (id) => async () => {
+export const deleteApi = (id) => async (dispatch) => {
   await fetch(`https://bookstore-api31.herokuapp.com/books/${id}`, { method: 'DELETE' });
+  dispatch(actions.removeBook(id));
 };
 
-export const books = (state = stateDefault, action) => {
+export const books = (state = stateDefault, { type, payload }) => {
   let newState;
   let newList;
-  switch (action.type) {
+  switch (type) {
     case 'SHOW_BOOKS':
-      newState = { ...state, list: action.payload };
+      newState = { ...state, list: payload };
       return newState;
     case 'CREATE_BOOK':
-      newState = { ...state, list: [...state.list, action.payload] };
+      newState = { ...state, list: [...state.list, payload] };
       return newState;
     case 'REMOVE_BOOK':
-      newList = state.list.filter((item) => item.id !== action.payload.id);
+      newList = state.list.filter((item) => item.id !== payload);
       newState = { ...state, list: newList };
       return newState;
     default:

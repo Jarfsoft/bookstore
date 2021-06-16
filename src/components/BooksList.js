@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import CategoryFilter from './CategoryFilter';
@@ -8,7 +8,10 @@ import { fetchApi } from '../reducers/books';
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
   const dispatch = useDispatch();
-  dispatch(fetchApi());
+
+  useEffect(() => {
+    dispatch(fetchApi());
+  }, []);
 
   const category = useSelector((state) => state.filter);
 

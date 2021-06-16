@@ -10,6 +10,7 @@ const Book = ({ book }) => {
   const clickHandler = () => {
     dispatch(deleteApi(book.id));
   };
+
   return (
     <tr>
       <td>{book.id}</td>

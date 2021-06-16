@@ -3,9 +3,9 @@ const actions = {
     type: 'CREATE_BOOK',
     payload: newBook,
   }),
-  removeBook: (newBook) => ({
+  removeBook: (id) => ({
     type: 'REMOVE_BOOK',
-    payload: newBook,
+    payload: id,
   }),
   filter: (category) => ({
     type: 'CHANGE_FILTER',
