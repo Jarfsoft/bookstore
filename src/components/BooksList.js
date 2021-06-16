@@ -2,8 +2,7 @@ import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import CategoryFilter from './CategoryFilter';
-import actions from '../actions/index';
-import { fetchApi } from '../reducers/books';
+import { actions, fetchApi } from '../actions/index';
 
 const BooksList = () => {
   const list = useSelector((state) => state.books.list);
