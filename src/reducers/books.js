@@ -10,14 +10,14 @@ export const fetchApi = () => async (dispatch) => {
 };
 
 export const postApi = (newBook) => async (dispatch) => {
-  await fetch('https://bookstore-api31.herokuapp.com/books', {
+  const book = await fetch('https://bookstore-api31.herokuapp.com/books', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
     },
     body: JSON.stringify(newBook),
-  });
-  dispatch(actions.addBook(newBook));
+  }).then((res) => res.json());
+  dispatch(actions.addBook(book.data));
 };
 
 export const deleteApi = (id) => async (dispatch) => {
